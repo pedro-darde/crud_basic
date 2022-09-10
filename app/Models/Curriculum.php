@@ -9,5 +9,7 @@ class Curriculum extends Model
 {
     use HasFactory;
 
+    protected $table = 'curriculums';
+
     protected $guarded = ['id'];
 }

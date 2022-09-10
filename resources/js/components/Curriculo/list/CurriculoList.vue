@@ -4,28 +4,33 @@
       <thead>
         <tr>
           <th scope="col">#</th>
-          <th scope="col">First</th>
-          <th scope="col">Last</th>
-          <th scope="col">Handle</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Email</th>
+          <th scope="col">Data de Nascimento</th>
+          <th scope="col">Telefone</th>
+          <th>Ações</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
+        <tr
+          v-if="curriculums && curriculums.length"
+          v-for="item in curriculums  "
+          :key="item.id"
+        >
+          <td>{{ item.id }}</td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.email }}</td>
+          <td>{{ $filters.date(item.birth_date) }}</td>
+          <td>{{ item.phone_number }}</td>
+          <td>
+            <div class="d-flex flex-row justify-content-between">
+              <a :href="`/curriculo/editar/${item.id}`"> Editar </a>
+              <a href="#" @click="remove(item.id)"> Excluir </a>
+            </div>
+          </td>
         </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td colspan="2">Larry the Bird</td>
-          <td>@twitter</td>
+        <tr v-else>
+          <td colspan="6">Sem itens</td>
         </tr>
       </tbody>
     </table>

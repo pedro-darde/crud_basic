@@ -1,9 +1,9 @@
-import './bootstrap';
-import { createApp } from 'vue';
-
+import "./bootstrap";
+import { createApp } from "vue";
+import Maska from "maska";
 
 const app = createApp({});
-
+app.use(Maska);
 
 Object.entries(import.meta.globEager("./**/*.vue")).forEach(
     ([path, definition]) => {
@@ -16,6 +16,7 @@ Object.entries(import.meta.globEager("./**/*.vue")).forEach(
         );
     }
 );
+
 app.config.globalProperties.$filters = {};
 
 Object.entries(import.meta.globEager("./filters/**")).forEach(
@@ -26,4 +27,4 @@ Object.entries(import.meta.globEager("./filters/**")).forEach(
     }
 );
 
-app.mount('#app');
+app.mount("#app");
