@@ -23,11 +23,12 @@
     <div class="mb-3">
       <label class="form-label"> Data de Nascimento</label>
       <input
-        type="date"
+        type="text"
         id="birth_date"
         required
         v-model="birth_date"
         class="form-control"
+        v-maska="maskOfDate()"
       />
     </div>
     <div class="mb-3">

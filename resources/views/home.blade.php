@@ -14,7 +14,7 @@
                                 Seja bem vindo {{ Auth::user()->name }} !
                             </div>
                             <div class="row">
-                                <a href="{{ route('dashboard') }}" class="btn btn-primary"> Cadastro Pessoal </a>
+                                <a href="{{ route('dashboard') }}" class="btn btn-dark"> Cadastro Pessoal </a>
                             </div>
                         @endguest
                     </div>

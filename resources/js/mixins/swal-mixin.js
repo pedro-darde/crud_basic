@@ -1,4 +1,4 @@
-import { Toast, ConfirmRemove } from "../helpers/sweetalert";
+import { Toast, ConfirmRemove, FormErr } from "../helpers/sweetalert";
 
 export default {
     methods: {
@@ -12,6 +12,11 @@ export default {
         async showRemoveConfirm() {
             return await ConfirmRemove.fire({
                 icon: "warning",
+            });
+        },
+        async toastError(message) {
+            await FormErr.fire({
+                title: message,
             });
         },
     },

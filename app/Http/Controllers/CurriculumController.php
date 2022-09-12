@@ -32,8 +32,19 @@ class CurriculumController extends Controller
                 'email' => 'required|string|email',
                 'birth_date' => 'required|date',
                 'phone_number' => 'required|string'
+            ],
+            [
+                'name.required' => 'Informe um nome.',
+                'name.string' => 'O nome deve ser formado por letras.',
+                'email.required' => 'Informe um e-mail.',
+                'email.string' => 'O campo email deve ser formado por letras.',
+                'email.email' => 'O campo e-mail deve conter um e-mail válido.',
+                'birth_date.required' => 'Informe uma Data de Nascimento.',
+                'birth_date.date' => 'O campo Data de Nascimento deve conter uma data válida.',
+                'phone_number.required' => 'Informe um telefone.',
             ]
         );
+
         Curriculum::create($validated);
 
         return response()->json(['Criado com sucesso.']);
@@ -48,6 +59,16 @@ class CurriculumController extends Controller
                 'email' => 'required|string|email',
                 'birth_date' => 'required|date',
                 'phone_number' => 'required|string'
+            ],
+            [
+                'name.required' => 'Informe um nome.',
+                'name.string' => 'O nome deve ser formado por letras.',
+                'email.required' => 'Informe um e-mail.',
+                'email.string' => 'O campo email deve ser formado por letras.',
+                'email.email' => 'O campo e-mail deve conter um e-mail válido.',
+                'birth_date.required' => 'Informe uma Data de Nascimento.',
+                'birth_date.date' => 'O campo Data de Nascimento deve conter uma data válida.',
+                'phone_number.required' => 'Informe um telefone.',
             ]
         );
 
