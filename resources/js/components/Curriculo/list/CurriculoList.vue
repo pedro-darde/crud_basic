@@ -24,8 +24,8 @@
           <td>{{ item.phone_number }}</td>
           <td>
             <div class="d-flex flex-row justify-content-between">
-              <a :href="`/curriculo/editar/${item.id}`"> Editar </a>
-              <a href="#" @click="remove(item.id)"> Excluir </a>
+              <a :href="hrefCurriculo(item)"> {{ canEdit ? 'Editar' : 'Visualizar'}}</a>
+              <a href="#" @click="remove(item.id)" v-if="canEdit"> Excluir </a>
             </div>
           </td>
         </tr>

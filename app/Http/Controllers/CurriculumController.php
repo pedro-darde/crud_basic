@@ -10,7 +10,7 @@ class CurriculumController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(AdminMiddleware::class);
+        $this->middleware(AdminMiddleware::class)->except('view');
     }
 
     public function index()
@@ -21,6 +21,11 @@ class CurriculumController extends Controller
     public function get(Curriculum $curriculum)
     {
         return view('curriculo.curriculo-edit', compact('curriculum'));
+    }
+
+    public function view(Curriculum $curriculum)
+    {
+        return view('curriculo.curriculo-view', compact('curriculum'));
     }
 
     public function store(Request $request)

@@ -1,5 +1,5 @@
 import swalMixin from "../../../mixins/swal-mixin";
-import { curriculumService } from "../../../services/curriculum-service";
+import {curriculumService} from "../../../services/curriculum-service";
 
 export default {
     mixins: [swalMixin],
@@ -14,7 +14,7 @@ export default {
     },
     methods: {
         async remove(id) {
-            const { isConfirmed } = await this.showRemoveConfirm();
+            const {isConfirmed} = await this.showRemoveConfirm();
 
             if (isConfirmed) {
                 await curriculumService.remover(id);
@@ -24,5 +24,14 @@ export default {
                 );
             }
         },
+        hrefCurriculo(item) {
+            if (this.canEdit) return `/curriculo/editar/${item.id}`
+            return `/curriculo/view/${item.id}`
+        }
+    },
+    computed: {
+        canEdit() {
+            return this.user.role === 'ADMIN'
+        }
     },
 };

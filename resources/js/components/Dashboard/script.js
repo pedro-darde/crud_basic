@@ -21,4 +21,9 @@ export default {
             this.redefinirUrl();
         }
     },
+    computed: {
+        canEdit() {
+            return this.user.role === 'ADMIN'
+        }
+    }
 };

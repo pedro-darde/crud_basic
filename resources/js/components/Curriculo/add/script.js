@@ -51,7 +51,7 @@ export default {
                     return;
                 }
 
-                if (this.birth_date.length < 14) {
+                if (this.phone_number.length < 14) {
                     this.toastError("Informe um número de telefone válido.");
                     return;
                 }
@@ -59,7 +59,7 @@ export default {
                 const dados = {
                     name: this.name,
                     birth_date: moment(this.birth_date, "DD/MM/YYYY").format(
-                        "YY-MM-DDDD"
+                        "YYYY-MM-DD"
                     ),
                     email: this.email,
                     phone_number: this.phone_number,

@@ -6,12 +6,12 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">
-                        <b>Currículo </b>
+                        <b>Currículo #{{ $curriculum->id }}</b>
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">Criar currículo</h5>
+                        <h5 class="card-title">Visualizar currículo</h5>
                         <div class="row">
-                            <curriculo-add ></curriculo-add>
+                            <curriculo-view :item="{{ $curriculum }}" :user="{{Auth::user()}}"></curriculo-view>
                         </div>
                     </div>
                 </div>

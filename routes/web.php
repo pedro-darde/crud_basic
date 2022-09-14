@@ -16,6 +16,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/curriculo', [CurriculumController::class, 'store']);
     Route::post('/curriculo/{curriculum}', [CurriculumController::class, 'edit']);
     Route::get('/curriculo/editar/{curriculum}', [CurriculumController::class, 'get']);
+    Route::get('/curriculo/view/{curriculum}', [CurriculumController::class, 'view']);
     Route::delete('/curriculo/{curriculum}', [CurriculumController::class, 'delete']);
 });
 
